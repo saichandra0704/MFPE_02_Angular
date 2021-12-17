@@ -1,0 +1,10 @@
+<nav class="navbar fixed-top navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Policy Adminstration System</a>
+    <a class="navbar-brand" routerLink="/createcb">Create Consumer Business</a>
+    <a class="navbar-brand" routerLink="/consumer">View Consumer Business</a>
+    <a class="navbar-brand" routerLink="/quotes">Issue Policy</a>
+    <button *ngIf="isLoggedIn" style="color: whitesmoke;" (click)="logout()" id="logout">Logout</button>
+  </div>
+</nav>
+<div class="nav-spacer"></div>
