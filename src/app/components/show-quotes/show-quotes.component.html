@@ -1,0 +1,123 @@
+<app-navbar></app-navbar>
+
+<div class="container text-center" *ngIf="!requestSent">
+    <form #getQuotesForm="ngForm" (ngSubmit)="onSubmit()" id="viewForm">
+        <input type="number" required min="1" #cId="ngModel" [class.is-invalid]="cId.touched && cId.invalid" class="form-control" name="cId" [(ngModel)]="id" (click)="onClick()" placeholder="Enter Consumer Id"/>
+        <small [class.d-none]="cId.valid || cId.untouched" class="text-danger">Value must be greater that 0.</small>
+        <p class="text-danger m-2">{{errorMessage}}</p>
+        <button id="x" [disabled]="getQuotesForm.form.invalid" type="submit" class="b1">Get Available Quotes</button>
+    </form>
+</div>
+
+
+<div class="container" *ngIf="requestSent">
+    <div class="row text-center">
+        <div class="col-12 my-5" *ngFor="let quote of quotes">
+            <div class="card card-1">
+                <div class="top">
+                <!-- <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Consumer Name : {{cb.consumerName}}</li>
+                  <li class="list-group-item">Consumer Email : {{cb.consumerEmail}}</li>
+                  <li class="list-group-item">Consumer PAN : {{cb.consumerPan}}</li>
+                  <li class="list-group-item">Business Name : {{cb.business.businessName}}</li>
+                  <li class="list-group-item">Annual Turnover : {{cb.business.annualTurnOver}}</li>
+                  <li class="list-group-item">Capital Invested : {{cb.business.capitalInvested}}</li>
+                  <li class="list-group-item">Property Type : Building </li>
+                  <li class="list-group-item">Property Value Range : {{quote.propertyValueRangeFrom}} - {{quote.propertyValueRangeTo}} </li>
+                  <li class="list-group-item">Business Value Range : {{quote.businessValueRangeFrom}} - {{quote.businessValueRangeTo}} </li>
+                  <li class="list-group-item">Quote : {{quote.quote}} </li>
+                </ul> -->
+                <table class="table">
+                    <tr>
+                        <td>
+                            Consumer Name
+                        </td>
+                        <td>
+                            {{cb.consumerName}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Consumer Email
+                        </td>
+                        <td>
+                            {{cb.consumerEmail}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Consumer PAN
+                        </td>
+                        <td>
+                            {{cb.consumerPan}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Business Name 
+                        </td>
+                        <td>
+                            {{cb.business.businessName}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Property Type
+                        </td>
+                        <td>
+                            Building
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Annual Turnover
+                        </td>
+                        <td>
+                            &#8377;{{cb.business.annualTurnOver}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Capital Invested
+                        </td>
+                        <td>
+                            &#8377;{{cb.business.capitalInvested}}
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td>
+                            Property Value Range
+                        </td>
+                        <td>
+                            {{quote.propertyValueRangeFrom}} - {{quote.propertyValueRangeTo}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Business Value Range
+                        </td>
+                        <td>
+                            {{quote.businessValueRangeFrom}} - {{quote.businessValueRangeTo}}
+                        </td>
+                    </tr> -->
+                    <tr>
+                        <td>
+                            Amount
+                        </td>
+                        <td>
+                            &#8377;{{quote.quote}}
+                        </td>
+                    </tr>  
+                </table>
+               </div>
+            <div class="bottom" *ngIf="!policyIssued">
+                <button class="btn" (click)="IssuePolicy(quote.quote)">Issue Policy</button>
+            </div>
+            <div class="bottom" *ngIf="policyIssued">
+                <button disabled class="btn2 p-2">Policy Issued</button>
+            </div>
+              </div>
+        </div>
+    </div>
+    
+</div>

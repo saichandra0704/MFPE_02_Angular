@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+
+<div class="container text-center" *ngIf="!requestSent">
+    <form #getPolicyForm="ngForm" (ngSubmit)="onSubmit()" id="getForm">
+        <input type="number" required min="1" #pId="ngModel" [class.is-invalid]="pId.touched && pId.invalid" class="form-control" name="pId" [(ngModel)]="id" (click)="onClick()" placeholder="Enter Policy Id"/>
+        <small [class.d-none]="pId.valid || pId.untouched" class="text-danger">Value must be greater that 0.</small>
+        <p class="text-danger m-2">{{errorMessage}}</p>
+        <button id="x" [disabled]="getPolicyForm.form.invalid" type="submit">Fetch Policy</button>
+    </form>
+</div>
+
+<div class="container text-center" *ngIf="requestSent">
+    
+</div>

@@ -1,0 +1,105 @@
+.card {
+    box-shadow: 2px 2px 2px 2px gray;
+	width: 100%;
+}
+
+.list-group-item {
+    border: none !important;
+}
+
+#x {
+	border-radius: 20px;
+	border: 1px solid #38d39f;
+	background-color: #38d39f;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+#x:active {
+	transform: scale(0.95);
+}
+
+#x :focus {
+	outline: none;
+}
+
+.btn {
+    background-color: transparent;
+    color: #38d39f;
+	width: 100%;
+
+}
+
+.b1 {
+    background-color: transparent;
+    color: #38d39f;
+	
+
+}
+.btn:hover {
+    color: white;
+    background-color: #38d39f;
+}
+
+
+
+.card {
+	left: 0%;
+	background: #fff;
+	border-radius: 3px;
+	display: inline-block;
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+	padding: 50px;
+  }
+  
+  .card .top {
+	display: inline-flex;
+	width: 100%;
+	overflow: hidden;
+	justify-content: center;
+  }
+  
+  .card .bottom {
+	height: 40px;
+	width: 100%;
+  }
+  
+  
+  .card-1 {
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+  
+  .card-1:hover {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	cursor: pointer;
+  }
+
+  table {
+
+	width: 50%;
+	text-align: left; 
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+  }
+
+  tr {
+	  font-weight: bold;
+  }
+
+  .btn2 {
+    background-color: lightgreen;
+    color: white;
+	width: 100%;
+
+}

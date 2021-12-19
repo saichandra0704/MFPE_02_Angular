@@ -1,0 +1,20 @@
+#x {
+	border-radius: 20px;
+	border: 1px solid #38d39f;
+	background: linear-gradient(to right, #38d39f, #1f5e34);
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+#x:active {
+	transform: scale(0.95);
+}
+
+#x :focus {
+	outline: none;
+}
